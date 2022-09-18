@@ -8,13 +8,16 @@ Laravel Framework 8.83.23
 Para o desenvolvimento deste desafio foi utilizado a seguinte estrututa
 
 App\Http\Controllers;
+
 LogicaController
 
 App\Services;
 ArquivoService
+
 LogicaService
 
 App\Contracts;
+
 Logica
 
 
