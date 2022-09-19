@@ -28,19 +28,19 @@ class LogicaController
     {
         try {
 
-            $modelo = (new Environment(new FilesystemLoader('views')))->load('agua.html');
-
             if (empty($_FILES['cases'])) throw new \Exception('Arquivo não existe!');
 
             if ($_FILES['cases']['type'] !== 'text/plain') throw new \Exception('Arquivo inválido!');
 
-            echo $modelo->render(
-                [
-                    'quantidade' => (new LogicaService())
-                        ->tratamento((new ArquivoService($_FILES['cases']['tmp_name']))
-                            ->leitura())
-                ]
-            );
+            echo (new Environment(new FilesystemLoader('views')))
+                ->load('agua.html')
+                ->render(
+                    [
+                        'quantidade' => (new LogicaService())
+                            ->tratamento((new ArquivoService($_FILES['cases']['tmp_name']))
+                                ->leitura())
+                    ]
+                );
 
         } catch (\Exception $e) {
             echo $e->getMessage();
