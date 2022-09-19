@@ -14,7 +14,6 @@ class LogicaService
     public function tratamento(array $casos): array
     {
         $resposta = [];
-        //$collection = Str::of('foo bar baz')->explode(' ');
         for ($posicao = 2; $posicao <= 2 * $casos[0]; $posicao += 2) {
             $caso = explode(" ", $casos[$posicao]);
             $reservatorio = new Logica($caso);
