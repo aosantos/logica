@@ -28,14 +28,14 @@ class LogicaController
     {
         try {
 
-            $twig = new Environment(new FilesystemLoader('views'));
-            $template = $twig->load('agua.html');
+            $exibir = new Environment(new FilesystemLoader('views'));
+            $modelo = $exibir->load('agua.html');
 
             if (empty($_FILES['cases'])) throw new \Exception('Arquivo não existe!');
 
             if ($_FILES['cases']['type'] !== 'text/plain') throw new \Exception('Arquivo inválido!');
 
-            echo $template->render(
+            echo $modelo->render(
                 [
                     'quantidade' => (new LogicaService())
                         ->tratamento((new ArquivoService($_FILES['cases']['tmp_name']))
