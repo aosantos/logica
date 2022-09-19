@@ -28,8 +28,7 @@ class LogicaController
     {
         try {
 
-            $exibir = new Environment(new FilesystemLoader('views'));
-            $modelo = $exibir->load('agua.html');
+            $modelo = (new Environment(new FilesystemLoader('views')))->load('agua.html');
 
             if (empty($_FILES['cases'])) throw new \Exception('Arquivo não existe!');
 
