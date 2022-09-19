@@ -5,7 +5,7 @@ Laragon Full (64-bit): Apache 2.4, Nginx, MySQL 5.7, PHP 7.4, Redis, Memcached, 
 Laravel Framework 8.83.23
 
 
-Para o desenvolvimento deste desafio foi utilizado a seguinte estrututa
+Para o desenvolvimento deste desafio foi utilizado a seguinte estrutura
 
 App\Http\Controllers;
 
